@@ -1,32 +1,35 @@
 # Código do Painel
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Painel de Salas</title>
-    <style>
+<style>
         table {
             background-color: #fff;
+            width: 100%;
+            
         }
-        teste {
-            width: 100%; 
-            max-width: 250px;
-            height: 50px;
+        img {
+            width: 95%; 
+            margin-left: 5px;
+            max-width: 200px;
+            height: 60px;
         }
         p {
-            width: 100%; 
-            min-width: 66px; 
+            width: 70%; 
+            min-width: 50px; 
+            margin: auto;
             background-color: rgba(0,0,0, 0.3); 
             color: #fff; border-radius: 5em; 
             text-align: center;
         }
-    </style>
-</head>
-<body>
+        th {
+          color: #fff;
+          background-color: #000;
+          text-align: center;
+        }
+        td {
+          border: 1px solid #000;
+        }
+</style>
 <table>
     <tr>
         <th> 1º Andar </th>
@@ -185,4 +188,5 @@
         <td><img src="https://raw.githubusercontent.com/jadson179/Enigma/develop/painel-salas/clientes/imperatriz/andar1/sala101/logo.png"><p> Sala 1111</p></td>
     </tr>
 </table>
+<pre>{{response.status }}</pre>
 ```

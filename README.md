@@ -1,3 +1,10 @@
+
+# GRAFANA 
+
+![](https://imgs.unisec.com.br/tools/grafana.svg)
+
+![](https://img.shields.io/badge/projeto-opensource-gren) 
+
 # Painel de Salas
 
 Solução criada com intuíto de ser uma ambiente onde estarão inseridas as `logos` das empresas alocadas no empreendimento `comercial`.

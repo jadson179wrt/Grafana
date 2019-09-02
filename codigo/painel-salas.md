@@ -1,3 +1,6 @@
+# Código do Painel
+
+```html
 <table>
     <tr>
         <th> 1º Andar </th>
@@ -156,3 +159,4 @@
         <td><img style="width: 100%; max-width: 250px; height: 50px;" src="https://raw.githubusercontent.com/jadson179/Enigma/develop/painel-salas/clientes/imperatriz/andar1/sala101/logo.png"><p style="width: 100%; min-width: 66px; background-color: #fff; color: #000; border-radius: 5em; text-align: center;"> Sala 1111</p></td>
     </tr>
 </table>
+```

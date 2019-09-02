@@ -1,6 +1,5 @@
 # Código do Painel
 
-```html
 <style>
         table {
             background-color: #fff;
@@ -188,5 +187,3 @@
         <td><img src="https://raw.githubusercontent.com/jadson179/Enigma/develop/painel-salas/clientes/imperatriz/andar1/sala101/logo.png"><p> Sala 1111</p></td>
     </tr>
 </table>
-<pre>{{response.status }}</pre>
-```

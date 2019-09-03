@@ -1,0 +1,94 @@
+{
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.3.5"
+    },
+    {
+      "type": "panel",
+      "id": "ryantxu-ajax-panel",
+      "name": "AJAX",
+      "version": "0.0.6"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "header_js": "{}",
+      "id": 2,
+      "method": "GET",
+      "mode": "template",
+      "options": {},
+      "params_js": "{\n from:ctrl.range.from.format('x'),  // x is unix ms timestamp\n to:ctrl.range.to.format('x'), \n height:ctrl.height,\n now:Date.now(),\n interval: ctrl.template('$__interval'),\n sample: 'Not escaped: $__interval',\n since:ctrl.lastRequestTime\n}",
+      "request": "http",
+      "responseType": "json",
+      "showTime": false,
+      "showTimeFormat": "LTS",
+      "showTimePrefix": null,
+      "showTimeValue": "request",
+      "skipSameURL": true,
+      "template": "<style>\n  #dash-table {\n    width: 100%;\n    background-color: #fff;\n    color: #000;\n  }\n  .table-header {\n    border: 1px solid #000;\n    text-align: center;   \n  }\n  .table-cell {\n      text-align: center; \n      border: 1px solid #000;\n  }\n</style>\n<table id=\"dash-table\">\n  <tr>\n      <th class=\"table-header\" > MOEDAS </th>\n      <th class=\"table-header\" > NOME </th>\n      <th class=\"table-header\" > HIGH </th>\n      <th class=\"table-header\" > LOW </th>\n      <th class=\"table-header\" > VARIAÇÃO DA MOEDA </th>\n      <th class=\"table-header\" > PERCENTUAL DE VARIAÇÃO </th>\n      <th class=\"table-header\" > COMPRA </th>\n      <th class=\"table-header\" > VENDA</th>\n      <th class=\"table-header\" > DATA DE MUDANÇA</th>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.USD.code}}</td>\n      <td class=\"table-cell\"> {{ response.USD.name}}</td>\n      <td class=\"table-cell\"> {{ response.USD.high}}</td>\n      <td class=\"table-cell\"> {{ response.USD.low}}</td>\n      <td class=\"table-cell\"> {{ response.USD.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.USD.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.USD.bid}}</td>\n      <td class=\"table-cell\"> {{ response.USD.ask}}</td>\n      <td class=\"table-cell\"> {{ response.USD.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.USDT.code}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.name}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.high}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.low}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.bid}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.ask}}</td>\n      <td class=\"table-cell\"> {{ response.USDT.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.CAD.code}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.name}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.high}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.low}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.bid}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.ask}}</td>\n      <td class=\"table-cell\"> {{ response.CAD.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.EUR.code}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.name}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.high}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.low}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.bid}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.ask}}</td>\n      <td class=\"table-cell\"> {{ response.EUR.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.GBP.code}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.name}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.high}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.low}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.bid}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.ask}}</td>\n      <td class=\"table-cell\"> {{ response.GBP.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.ARS.code}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.name}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.high}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.low}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.bid}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.ask}}</td>\n      <td class=\"table-cell\"> {{ response.ARS.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.BTC.code}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.name}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.high}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.low}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.bid}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.ask}}</td>\n      <td class=\"table-cell\"> {{ response.BTC.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.LTC.code}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.name}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.high}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.low}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.bid}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.ask}}</td>\n      <td class=\"table-cell\"> {{ response.LTC.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.JPY.code}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.name}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.high}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.low}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.bid}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.ask}}</td>\n      <td class=\"table-cell\"> {{ response.JPY.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.CHF.code}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.name}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.high}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.low}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.bid}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.ask}}</td>\n      <td class=\"table-cell\"> {{ response.CHF.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.AUD.code}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.name}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.high}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.low}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.bid}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.ask}}</td>\n      <td class=\"table-cell\"> {{ response.AUD.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.CNY.code}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.name}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.high}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.low}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.bid}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.ask}}</td>\n      <td class=\"table-cell\"> {{ response.CNY.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.ILS.code}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.name}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.high}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.low}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.bid}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.ask}}</td>\n      <td class=\"table-cell\"> {{ response.ILS.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.ETH.code}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.name}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.high}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.low}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.bid}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.ask}}</td>\n      <td class=\"table-cell\"> {{ response.ETH.create_date}}</td>\n  </tr>\n  <tr>\n      <td class=\"table-cell\"> {{ response.XRP.code}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.name}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.high}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.low}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.varBid}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.pctChange}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.bid}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.ask}}</td>\n      <td class=\"table-cell\"> {{ response.XRP.create_date}}</td>\n  </tr>\n</taBle>",
+      "templateResponse": true,
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Cotação de Moedas",
+      "type": "ryantxu-ajax-panel",
+      "url": "https://economia.awesomeapi.com.br/all",
+      "withCredentials": false
+    }
+  ],
+  "schemaVersion": 19,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Cotação de Moedas",
+  "uid": "QTSlhqFWk",
+  "version": 5
+}

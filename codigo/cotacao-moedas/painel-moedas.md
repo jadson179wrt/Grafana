@@ -3,7 +3,30 @@
 ## Requisítos
 
 - [plugin ajax](https://grafana.com/grafana/plugins/ryantxu-ajax-panel)
-- 
+
+###  Configuração | Plugin AJAX
+
+`API`: https://economia.awesomeapi.com.br/all
+
+#### Source 
+
+- Dentro da Source no campo URL, cole o endereço da [API](https://economia.awesomeapi.com.br/all)
+
+- Defina o Metódo: `GET`
+- Defina a resposta: `JSON`
+
+![SOURCE](../../images/source.png)
+
+#### Display 
+
+- Defina o modo: Angular Template
+- Copie o código abaixo e cole no campo: `Angular Template`
+
+![SOURCE](../../images/display.png)
+
+Código do Painel de Moedas
+
+```html
 <style>
   #dash-table {
     width: 100%;
@@ -187,7 +210,7 @@
   </tr>
   <tr>
       <td class="table-cell"> {{ response.XRP.code}}</td>
-      <td class="table-cell"> {{ response.XRP.name}}</td>
+      <td class="tablhttps://economia.awesomeapi.com.br/alle-cell"> {{ response.XRP.name}}</td>
       <td class="table-cell"> {{ response.XRP.high}}</td>
       <td class="table-cell"> {{ response.XRP.low}}</td>
       <td class="table-cell"> {{ response.XRP.varBid}}</td>
@@ -197,3 +220,4 @@
       <td class="table-cell"> {{ response.XRP.create_date}}</td>
   </tr>
 </taBle>
+```

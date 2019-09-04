@@ -1,4 +1,8 @@
+
+![](https://img.shields.io/badge/painel-grafana-orange)
+
 # Apartamento em Funcionamento / Sem funcionamento
+
 
 
 <img src="../../images/apartamentos.png" width="400">

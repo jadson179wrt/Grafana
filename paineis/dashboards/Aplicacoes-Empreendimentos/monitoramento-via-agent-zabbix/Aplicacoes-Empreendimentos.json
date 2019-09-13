@@ -1,0 +1,772 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_ZABBIX",
+      "label": "Zabbix",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "alexanderzobnin-zabbix-datasource",
+      "pluginName": "Zabbix"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "datasource",
+      "id": "alexanderzobnin-zabbix-datasource",
+      "name": "Zabbix",
+      "version": "1.0.0"
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "6.3.5"
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 10,
+      "panels": [],
+      "title": "Monitoramento  | Agent Zabbix",
+      "type": "row"
+    },
+    {
+      "columns": [
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "${DS_ZABBIX}",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 2,
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Status",
+          "colorMode": "cell",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Current",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "text": "Com comunicação",
+              "value": "1"
+            },
+            {
+              "text": "Sem comunicação",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "alias": "Aplicações",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Metric",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "application": {
+            "filter": "Zabbix agent"
+          },
+          "functions": [
+            {
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                ": Zabbix agent ping",
+                " "
+              ],
+              "text": "replaceAlias(: Zabbix agent ping,  )"
+            }
+          ],
+          "group": {
+            "filter": "Beco-Castelo"
+          },
+          "host": {
+            "filter": "/.*/"
+          },
+          "item": {
+            "filter": "Zabbix agent ping"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Agent Zabbix | Becocastelo ",
+      "transform": "timeseries_aggregations",
+      "type": "table"
+    },
+    {
+      "columns": [
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "${DS_ZABBIX}",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 4,
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "Status",
+          "colorMode": "cell",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Current",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "text": "Com comunicação",
+              "value": "1"
+            },
+            {
+              "text": "Sem comunicação",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "alias": "Aplicações",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Metric",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "application": {
+            "filter": "Zabbix agent"
+          },
+          "functions": [
+            {
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                ": Zabbix agent ping",
+                "  "
+              ],
+              "text": "replaceAlias(: Zabbix agent ping,   )"
+            }
+          ],
+          "group": {
+            "filter": "A&A Philippi"
+          },
+          "host": {
+            "filter": "/.*/"
+          },
+          "item": {
+            "filter": "Zabbix agent ping"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Agent Zabbix | A&A",
+      "transform": "timeseries_aggregations",
+      "type": "table"
+    },
+    {
+      "columns": [
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "${DS_ZABBIX}",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 6,
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "Status",
+          "colorMode": "cell",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Current",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "text": "Com comunicação",
+              "value": "1"
+            },
+            {
+              "text": "Sem comunicação",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "alias": "Aplicações",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Metric",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "application": {
+            "filter": "Zabbix agent"
+          },
+          "functions": [
+            {
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                ": Zabbix agent ping",
+                "  "
+              ],
+              "text": "replaceAlias(: Zabbix agent ping,   )"
+            }
+          ],
+          "group": {
+            "filter": "Centro Executivo Imperatriz"
+          },
+          "host": {
+            "filter": "/.*/"
+          },
+          "item": {
+            "filter": "Zabbix agent ping"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Agent Zabbix | Imperatriz",
+      "transform": "timeseries_aggregations",
+      "type": "table"
+    },
+    {
+      "columns": [
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "${DS_ZABBIX}",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 8,
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "Status",
+          "colorMode": "cell",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Current",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "text": "Com comunicação",
+              "value": "1"
+            },
+            {
+              "text": "Sem comunicação",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "alias": "Aplicações",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Metric",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "application": {
+            "filter": "Zabbix agent"
+          },
+          "functions": [
+            {
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                ": Zabbix agent ping",
+                "  "
+              ],
+              "text": "replaceAlias(: Zabbix agent ping,   )"
+            }
+          ],
+          "group": {
+            "filter": "Maria Esther"
+          },
+          "host": {
+            "filter": "/.*/"
+          },
+          "item": {
+            "filter": "Zabbix agent ping"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Agent Zabbix | Maria Esther",
+      "transform": "timeseries_aggregations",
+      "type": "table"
+    },
+    {
+      "columns": [
+        {
+          "text": "Current",
+          "value": "current"
+        }
+      ],
+      "datasource": "${DS_ZABBIX}",
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 12,
+      "options": {},
+      "pageSize": null,
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "alias": "Status",
+          "colorMode": "cell",
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Current",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "text": "Com comunicação",
+              "value": "1"
+            },
+            {
+              "text": "Sem comunicação",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "alias": "Aplicações",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Metric",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "application": {
+            "filter": "Zabbix agent"
+          },
+          "functions": [
+            {
+              "def": {
+                "category": "Alias",
+                "defaultParams": [
+                  "/(.*)/",
+                  "$1"
+                ],
+                "name": "replaceAlias",
+                "params": [
+                  {
+                    "name": "regexp",
+                    "type": "string"
+                  },
+                  {
+                    "name": "newAlias",
+                    "type": "string"
+                  }
+                ]
+              },
+              "params": [
+                ": Zabbix agent ping",
+                "  "
+              ],
+              "text": "replaceAlias(: Zabbix agent ping,   )"
+            }
+          ],
+          "group": {
+            "filter": "Vitale"
+          },
+          "host": {
+            "filter": "/.*/"
+          },
+          "item": {
+            "filter": "Zabbix agent ping"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Agent Zabbix |Vitale",
+      "transform": "timeseries_aggregations",
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 19,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Empreendimentos",
+  "uid": "MwPJNVcZk",
+  "version": 11
+}

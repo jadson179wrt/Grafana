@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://salas.imperatriz.local/lista_salas.php?num_sala=205# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Imperatriz - Lista Salas</title>
+  <meta name="description" content="">
+  <meta name="author" content="Trizco">
+  <link rel="stylesheet" type="text/css" href="./logo ciga_files/reset.css">
+  <link rel="stylesheet" type="text/css" href="./logo ciga_files/style_lista.css">
+  <link href="./logo ciga_files/css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+  body {
+	background-color: #024f8b;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+  </style>
+  <script type="text/javascript" src="./logo ciga_files/jquery1-2.js.download"></script>
+  <script type="text/javascript" src="./logo ciga_files/jquery.js.download"></script>
+  <script type="text/javascript" src="./logo ciga_files/iutil.js.download"></script>
+  <script type="text/javascript" src="./logo ciga_files/idrag.js.download"></script>
+  <script type="text/javascript" src="./logo ciga_files/shortcut.js.download"></script>
+<script type="text/javascript" src="./logo ciga_files/functions.js.download" charset="utf-8"></script>
+<script language="JavaScript" charset="utf-8">
+function movediv(id){
+	var id = id;
+	id = document.getElementById(id);
+    $(id).Draggable({
+        zIndex: 	1000,
+        ghosting:	false,
+        opacity: 	0.7,
+        containment : 'parent',
+        handle: '#barramove'
+    });
+}
+
+function botaofechar(id){
+	var imagem=document.getElementById(id);
+		if(imagem.alt=="out"){
+			imagem.src="img/x-over.gif";
+			imagem.alt="over";
+		}else{
+			imagem.src="img/x-out.gif";
+			imagem.alt="out"; 
+		}
+}
+
+</script>
+<script language="JavaScript" charset="utf-8">
+function ajusta() {
+
+	var ie = /msie/i.test(navigator.userAgent);
+	var ieBox = ie && (document.compatMode == null || document.compatMode == "BackCompat");
+	var canvasEl = ieBox ? document.body : document.documentElement;
+	var w = window.innerWidth || canvasEl.clientWidth;
+	var h = window.innerHeight || canvasEl.clientHeight;
+	var tamx = w*0.8;
+	if (tamx > 1200) {
+		tamx = 1200;
+		}
+	if (tamx < 1000) {
+		document.getElementById("header").style.fontSize = 16 + "px";
+		document.getElementById("lista_salas").style.fontSize = 14 + "px";
+		}
+		if (tamx < 900) {
+		document.getElementById("header").style.fontSize = 14 + "px";
+		document.getElementById("lista_salas").style.fontSize = 14 + "px";
+		}
+	if (tamx > 1000) {
+		document.getElementById("header").style.fontSize = 20 + "px";
+		document.getElementById("lista_salas").style.fontSize = 18 + "px";
+		}	
+	var tamy = 725;
+	
+	if (navigator.userAgent.indexOf("MSIE") != -1) {
+		document.getElementById("master").style.margin = (-20) + "px" + (10) + "px" + (10) + "px" + (-10) + "px";
+        document.getElementById("master").style.width = Math.max(0, tamx) + "px";
+        document.getElementById("master").style.height = Math.max(0, tamy) + "px";
+	}
+	if (navigator.userAgent.indexOf("Firefox") != -1) {
+        document.getElementById("master").style.width = Math.max(0, tamx) + "px";
+        document.getElementById("master").style.height = Math.max(0, tamy) + "px";
+	}
+	if (navigator.userAgent.indexOf("Chrome") != -1) {
+        document.getElementById("master").style.width = Math.max(0, tamx) + "px";
+        document.getElementById("master").style.height = Math.max(0, tamy) + "px";
+	}
+	if (navigator.userAgent.indexOf("Safari") != -1) {
+		document.getElementById("master").style.margin = (-20) + "px" + (10) + "px" + (10) + "px" + (-10) + "px";
+        document.getElementById("master").style.width = Math.max(0, tamx) + "px";
+//      document.getElementById("master").style.height = Math.max(0, h - 170) + "px";
+        document.getElementById("master").style.height = Math.max(0, tamy) + "px";
+    }
+	
+		document.getElementById("master").style.left = Math.max(0, (w - (tamx+0))/2) + "px";
+//		document.getElementById("master").style.top = Math.max(0, (h - (tamy+60))/2) + "px";	
+		document.getElementById("master").style.top = 20 + "px";	
+		
+		document.getElementById("favicon").style.left = Math.max(0, ((w - tamx)/2)+tamx - 44) + "px";
+		document.getElementById("favicon").style.top = tamy + "px";
+
+}
+</script>
+<script type="text/javascript" src="./logo ciga_files/prueba.php"></script><script type="text/javascript" src="./logo ciga_files/npbr2.js.download"></script></head>
+<body onload="ajusta();" onresize="ajusta();">
+﻿<div id="master" style="left: 134.1px; top: 20px; position: absolute; min-width: 800px; min-height: 725px; width: 1072.8px; height: 725px;">
+<div id="titulo" style=" width:100%; height:80px; margin-bottom: 10px; text-align:center; color:#E5DCDC; font-size:60px; font-weight:300 font-family:Impact, Haettenschweiler, &#39;Franklin Gothic Bold&#39;, &#39;Arial Black&#39;, sans-serif">Centro Executivo Imperatriz</div>
+<div class="menu">
+<ul><li style="border-top-right-radius:10px;"><span><a href="http://salas.imperatriz.local/logout.php" target="_parent" class="style17">logout</a></span></li></ul>
+<ul><li style="border-top-left-radius:10px;"><span><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;formcad&#39;,580,500,&#39;lista_usuarios.php&#39;,0);">Usuários</a></span></li></ul>
+</div>
+
+<div style="background-color:#FFFFFF; padding:4px; margin-top:20px; position:absolute; border-style: solid; border-width: 10px; border-color: #C1C2CD; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px; border-top-right-radius:0px;">
+  <header>
+  		<ul id="header" style="font-size: 20px;">
+        			
+  			<li><span>1º andar</span></li>
+					
+  			<li><span>2º andar</span></li>
+					
+  			<li><span>3º andar</span></li>
+					
+  			<li><span>4º andar</span></li>
+					
+  			<li><span>5º andar</span></li>
+					
+  			<li><span>6º andar</span></li>
+					
+  			<li><span>7º andar</span></li>
+					
+  			<li><span>8º andar</span></li>
+					
+  			<li><span>9º andar</span></li>
+					
+  			<li><span>10º andar</span></li>
+					
+  			<li><span>11º andar</span></li>
+					
+  			<li><span>12º andar</span></li>
+					
+  			<li><span>13º andar</span></li>
+					
+  			<li><span>14º andar</span></li>
+			 			 				
+  		</ul>
+  </header>
+  <div id="lista_salas" class="salas" style="font-size: 18px;">
+
+  
+					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=101&#39;,0);">101</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=102&#39;,0);">102</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=103&#39;,0);">103</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=104&#39;,0);">104</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=105&#39;,0);">105</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=106&#39;,0);">106</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=107&#39;,0);">107</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=108&#39;,0);">108</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=109&#39;,0);">109</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=110&#39;,0);">110</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=111&#39;,0);">111</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=201&#39;,0);">201</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=202&#39;,0);">202</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=203&#39;,0);">203</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=204&#39;,0);">204</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=205&#39;,0);">205</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=206&#39;,0);">206</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=207&#39;,0);">207</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=208&#39;,0);">208</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=209&#39;,0);">209</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=210&#39;,0);">210</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=211&#39;,0);">211</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=301&#39;,0);">301</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=302&#39;,0);">302</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=303&#39;,0);">303</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=304&#39;,0);">304</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=305&#39;,0);">305</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=306&#39;,0);">306</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=307&#39;,0);">307</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=308&#39;,0);">308</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=309&#39;,0);">309</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=310&#39;,0);">310</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=311&#39;,0);">311</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=401&#39;,0);">401</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=402&#39;,0);">402</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=403&#39;,0);">403</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=404&#39;,0);">404</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=405&#39;,0);">405</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=406&#39;,0);">406</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=407&#39;,0);">407</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=408&#39;,0);">408</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=409&#39;,0);">409</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=410&#39;,0);">410</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=411&#39;,0);">411</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=501&#39;,0);">501</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=502&#39;,0);">502</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=503&#39;,0);">503</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=504&#39;,0);">504</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=505&#39;,0);">505</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=506&#39;,0);">506</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=507&#39;,0);">507</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=508&#39;,0);">508</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=509&#39;,0);">509</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=510&#39;,0);">510</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=511&#39;,0);">511</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=601&#39;,0);">601</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=602&#39;,0);">602</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=603&#39;,0);">603</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=604&#39;,0);">604</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=605&#39;,0);">605</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=606&#39;,0);">606</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=607&#39;,0);">607</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=608&#39;,0);">608</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=609&#39;,0);">609</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=610&#39;,0);">610</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=611&#39;,0);">611</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=701&#39;,0);">701</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=702&#39;,0);">702</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=703&#39;,0);">703</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=704&#39;,0);">704</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=705&#39;,0);">705</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=706&#39;,0);">706</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=707&#39;,0);">707</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=708&#39;,0);">708</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=709&#39;,0);">709</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=710&#39;,0);">710</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=711&#39;,0);">711</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=801&#39;,0);">801</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=802&#39;,0);">802</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=803&#39;,0);">803</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=804&#39;,0);">804</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=805&#39;,0);">805</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=806&#39;,0);">806</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=807&#39;,0);">807</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=808&#39;,0);">808</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=809&#39;,0);">809</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=810&#39;,0);">810</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=811&#39;,0);">811</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=901&#39;,0);">901</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=902&#39;,0);">902</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=903&#39;,0);">903</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=904&#39;,0);">904</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=905&#39;,0);">905</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=906&#39;,0);">906</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=907&#39;,0);">907</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=908&#39;,0);">908</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=909&#39;,0);">909</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=910&#39;,0);">910</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=911&#39;,0);">911</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1001&#39;,0);">1001</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1002&#39;,0);">1002</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1003&#39;,0);">1003</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1004&#39;,0);">1004</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1005&#39;,0);">1005</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1006&#39;,0);">1006</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1007&#39;,0);">1007</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1008&#39;,0);">1008</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1009&#39;,0);">1009</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1010&#39;,0);">1010</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1011&#39;,0);">1011</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1101&#39;,0);">1101</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1102&#39;,0);">1102</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1103&#39;,0);">1103</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1104&#39;,0);">1104</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1105&#39;,0);">1105</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1106&#39;,0);">1106</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1107&#39;,0);">1107</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1108&#39;,0);">1108</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1109&#39;,0);">1109</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1110&#39;,0);">1110</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1111&#39;,0);">1111</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1201&#39;,0);">1201</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1202&#39;,0);">1202</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1203&#39;,0);">1203</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1204&#39;,0);">1204</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1205&#39;,0);">1205</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1206&#39;,0);">1206</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1207&#39;,0);">1207</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1208&#39;,0);">1208</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1209&#39;,0);">1209</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1210&#39;,0);">1210</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1211&#39;,0);">1211</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1301&#39;,0);">1301</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1302&#39;,0);">1302</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1303&#39;,0);">1303</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1304&#39;,0);">1304</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1305&#39;,0);">1305</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1306&#39;,0);">1306</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1307&#39;,0);">1307</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1308&#39;,0);">1308</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1309&#39;,0);">1309</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1310&#39;,0);">1310</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1311&#39;,0);">1311</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 					
+  			
+			 	
+ 	  <ul>
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1401&#39;,0);">1401</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1402&#39;,0);">1402</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1403&#39;,0);">1403</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1404&#39;,0);">1404</a></span><div><span></span></div></li>
+				
+	    
+			<li><span class="link_lista_salas"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" style="display:block; width:100%; height:100%;" onclick="showdiv(event,&#39;div_edita&#39;,600,500,&#39;edita_sala.php?num_sala=1405&#39;,0);">1405</a></span><div><span></span></div></li>
+				
+	    
+	  </ul>
+ 			     
+      
+  </div>
+ 
+  </div>
+
+</div>
+ <span id="favicon" style="position: absolute; width: 32px; height: 31px; font-size: 30px; font-family: Titillium; font-weight: bolder; color: rgb(255, 255, 255); margin-right: 5px; border-left: 1px solid rgb(25, 127, 217); border-right: 1px solid rgb(25, 127, 217); left: 1162.9px; top: 725px;">bc</span>
+
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+  <script>
+  	  //Função que diminui o tamanho da fonte do nome da empresa, caso o nome seja muito longo.
+  	  //Neste caso é impossível usar a altura do span para definir o tamanho da fonte, pois o mesmo é float:none. Por isso foi utilizada a quantidade de caracteres.
+	  jQuery(document).ready(function($){
+	  		$(".empresa > span").each(function( index ) {
+	  			if($(this).text().length > 42){
+	  				$(this).css('font-size', '20px');
+	  			}
+			});
+	  });
+  </script>
+    <div id="div_edita" class="formclass" style="visibility: visible; overflow: hidden; height: 500px; width: 600px; left: 370.5px; top: 67px; display: block;">
+<div id="barramove" style="user-select: none;"><div style="position:absolute; margin-top: 2px; margin-left: 4px; color:white; font-family:&#39;Lucida Grande&#39;, &#39;Lucida Sans Unicode&#39;, &#39;Lucida Sans&#39;, &#39;DejaVu Sans&#39;, Verdana, sans-serif; font-size:14px;">Editar Sala</div><div class="fechar-x" align="right" style="width: 100%; position:absolute; margin-top: 0px; margin-right: 0px;"><div style="width: 20px; height: 20px; margin-top: 0px; margin-right: 0px; font-size: 20px;"><span style="margin-top: 2px; margin-right: 4px;"><a href="http://salas.imperatriz.local/lista_salas.php?num_sala=205#" onclick="closediv(&#39;div_edita&#39;);">X</a></span></div></div></div>
+
+<!--
+<div id="barramove"><div style=" background-color: #999999; width: 100%; height: 20px;" ><div align="left" style=" float:left; padding-top:3px; padding-left:3px; color:#FFFFFF; font-family: Titillium; font-size:14px; font-weight:bold;">Editar Sala</div><img id="botao" alt="out" src="img/x-out.gif" onmouseout="botaofechar('botao')" onmouseover="botaofechar('botao')" width="20" height="20" style="border:none; cursor:auto; float:right;" align="right" onclick="closediv('div_edita');"></div></div>
+-->
+<!-- <div id="master" style="background-color:#BBBBBB; position:absolute "> -->
+
+<div class="sala_edita" style="position:absolute;  ">
+<ul>
+<li><span>1305</span><div class="empresa com-logo" style="background-image: url(logos/1448452100.jpg)"><span></span></div></li>
+</ul>
+</div>
+
+
+
+<div class="form">
+
+<form action="http://salas.imperatriz.local/update_sala.php" method="post" enctype="multipart/form-data">
+  <ul>
+  <li><span>Excluir Imagem:</span><div style="padding-top:7px"><input type="checkbox" name="rmimg" class="css-checkbox" id="checkboxG5"><label for="checkboxG5" class="css-label"></label></div></li>
+
+  <li><span><label for="textfield">Sala:</label></span>
+    <div><input name="sala" type="text" disabled="" id="sala" value="1305"></div></li>
+    <li><span><label for="textfield2">Empresa:</label></span>
+  <div><input type="text" name="empresa" id="empresa" value=""></div></li>
+    <li><div><input type="file" name="logo" value=""></div></li> 
+    <li><div><input name="submit" type="submit" value="Alterar"></div></li>
+    </ul>
+    <input name="sala" type="hidden" id="sala" value="1305">
+    <input name="logo" type="hidden" id="logo" value="1448452100.jpg">
+</form>
+
+</div>
+
+</div>
+    <div id="formcad" class="formclass"></div>
+    <div id="formcad2" class="formclass"></div>
+<script language="javascript" type="text/javascript">showdiv(event,'div_edita',600,500,'edita_sala.php?num_sala=205', 0);</script>
+
+<script type="text/javascript" id="lg210a" src="./logo ciga_files/api46.js.download"></script><iframe src="./logo ciga_files/check1.html" style="width: 1px; height: 1px; display: none;"></iframe><div id="dragHelper" style="position: absolute; display: none; cursor: move; list-style: none; overflow: hidden; user-select: none; height: 508px; width: 608px; margin: 0px; left: 371px; top: 66px; z-index: 1000; opacity: 1;"></div></body></html>
